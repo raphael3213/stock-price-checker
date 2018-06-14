@@ -6,3 +6,6 @@ ip:String,
   name:String
 
 })
+
+
+module.exports=mongoose.model('sto',stockSchema);
