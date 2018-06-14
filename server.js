@@ -38,14 +38,14 @@ console.log("hello")
 console.log(req.body);
 var stname=req.body.stocker;
   var like=req.body.like;
-  
+  var corr=true;
   var url="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="
 
 
 var url1="&apikey=JERJY9GO78VJY24X";
-
-request(url,function(err,res,body){
-
+var urlx=url+stname+url1;
+request(urlx,function(err,res,body){
+console.log(body);
 //console.log(body)
 
 })
