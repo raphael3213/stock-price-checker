@@ -54,8 +54,9 @@ request(urlx,function(err,resi,body){
   }
   var d=new Date();
   
-  var date=d.getYear().toString();
-  var month=d.getMonth+1;
+  var date="2018"
+  console.log("year is "+date)
+  var month=d.getMonth()+1;
   month=month.toString();
   if(month.length==1){
   
