@@ -69,7 +69,7 @@ request(urlx,function(err,resi,body){
   }
   var f=date+"-"+month+"-"+days;
   console.log(f);
-//console.log(meta["Time Series (Daily)"]['2018-01-24']);
+console.log(meta["Time Series (Daily)"][f]);
 //console.log(body)
 
 })
