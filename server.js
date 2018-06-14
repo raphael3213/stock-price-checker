@@ -7,7 +7,7 @@ var app = express();
 var request=require('request');
 var bp=require('body-parser');
 app.use(bp.json())
-app.use(bp.urlencoded({}))
+app.use(bp.urlencoded({extended:false}))
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
@@ -18,7 +18,11 @@ app.use(express.static('public'));
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
-var url="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=JERJY9GO78VJY24X";
+
+var url="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="
+
+
+var url1="&apikey=JERJY9GO78VJY24X";
 
 request(url,function(err,res,body){
 
