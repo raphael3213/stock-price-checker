@@ -52,6 +52,16 @@ request(urlx,function(err,resi,body){
   res.json({Error:"Stock doesnt exist"});
     
   }
+  var d=new Date();
+  
+  var date=d.getYear().toString();
+  var month=d.getMonth().toString();
+  if(month.length==1){
+  
+  month="0"+month;
+  }
+  var days=d.getDate().toString();
+  
   
   console.log(meta);
 //console.log(meta["Time Series (Daily)"]['2018-01-24']);
