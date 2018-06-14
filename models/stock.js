@@ -2,8 +2,9 @@ var mongoose=require('mongoose');
 
 var stockSchema=mongoose.Schema({
 
-ip:String,
-  name:String
+ip:Array,
+  name:String,
+  like:Number
 
 })
 
