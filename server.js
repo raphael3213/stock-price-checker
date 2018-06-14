@@ -72,7 +72,8 @@ request(urlx,function(err,resi,body){
 var price=meta["Time Series (Daily)"][f];
   
 //console.log(body)
-
+var newStock=new stocks;
+  newStock.
 })
 })
 // listen for requests :)
