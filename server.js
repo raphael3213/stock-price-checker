@@ -69,7 +69,8 @@ request(urlx,function(err,resi,body){
   }
   var f=date+"-"+month+"-"+days;
   console.log(f);
-console.log(meta["Time Series (Daily)"][f]);
+var price=meta["Time Series (Daily)"][f];
+  
 //console.log(body)
 
 })
