@@ -28,14 +28,14 @@ var url1="&apikey=JERJY9GO78VJY24X";
 
 request(url,function(err,res,body){
 
-console.log(body)
+//console.log(body)
 
 })
 
 
 app.get('/stock',function(req,res,next){
 
-
+console.log(req.body);
 
 })
 // listen for requests :)
