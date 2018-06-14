@@ -4,7 +4,7 @@
 // init project
 var express = require('express');
 var app = express();
-
+var request=require('request');
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
@@ -15,6 +15,8 @@ app.use(express.static('public'));
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
+var url="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=JERJY9GO78VJY24X";
+
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
