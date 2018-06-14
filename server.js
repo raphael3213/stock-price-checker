@@ -5,6 +5,9 @@
 var express = require('express');
 var app = express();
 var request=require('request');
+var bp=require('body-parser');
+app.use(bp.json())
+app.use(bp.urlencoded({}))
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
