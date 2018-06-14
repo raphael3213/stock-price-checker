@@ -36,7 +36,10 @@ request(url,function(err,res,body){
 app.post('/stock',function(req,res,next){
 console.log("hello")
 console.log(req.body);
-
+var stname=req.body.stocker;
+  var like=req.body.like;
+  
+  stocks.findO
 })
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
