@@ -33,8 +33,8 @@ request(url,function(err,res,body){
 })
 
 
-app.get('/stock',function(req,res,next){
-consol
+app.post('/stock',function(req,res,next){
+console.log("hello")
 console.log(req.body);
 
 })
