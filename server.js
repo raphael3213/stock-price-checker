@@ -4,6 +4,8 @@
 // init project
 var express = require('express');
 var app = express();
+var mongoose=require('mongoose');
+
 var request=require('request');
 var bp=require('body-parser');
 var stocks=require('./models/stock')
@@ -12,7 +14,14 @@ app.use(bp.urlencoded({extended:false}))
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
+mongoose.connect(process.env.MONGO_URI,function(err){
 
+if(err){
+console.log(err)
+}
+  console.log("mongo connected");
+  
+})
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
@@ -72,8 +81,11 @@ request(urlx,function(err,resi,body){
 var price=meta["Time Series (Daily)"][f];
   
 //console.log(body)
+  
+  stocks.find()
 var newStock=new stocks;
-  newStock.
+  newStock.name=stname;
+  
 })
 })
 // listen for requests :)
