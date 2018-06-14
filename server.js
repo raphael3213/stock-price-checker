@@ -39,7 +39,16 @@ console.log(req.body);
 var stname=req.body.stocker;
   var like=req.body.like;
   
-  stocks.findO
+  var url="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="
+
+
+var url1="&apikey=JERJY9GO78VJY24X";
+
+request(url,function(err,res,body){
+
+//console.log(body)
+
+})
 })
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
