@@ -45,8 +45,11 @@ var stname=req.body.stocker;
 var url1="&apikey=JERJY9GO78VJY24X";
 var urlx=url+stname+url1;
 request(urlx,function(err,res,body){
+  
   var meta=JSON.parse(body);
-console.log(meta["Time Series (Daily)"]['2018-01-24']);
+  if(meta['Error Message']!=undefined)
+  console.log(meta);
+//console.log(meta["Time Series (Daily)"]['2018-01-24']);
 //console.log(body)
 
 })
