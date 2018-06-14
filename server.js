@@ -34,7 +34,7 @@ request(url,function(err,res,body){
 
 
 app.get('/stock',function(req,res,next){
-
+consol
 console.log(req.body);
 
 })
