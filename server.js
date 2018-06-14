@@ -17,7 +17,11 @@ app.get("/", function (request, response) {
 });
 var url="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=JERJY9GO78VJY24X";
 
+request(url,function(err,res,body){
 
+console.log(body)
+
+})
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
