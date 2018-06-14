@@ -45,6 +45,7 @@ request(url,function(err,res,body){
 app.post('/stock',function(req,res,next){
 console.log("hello")
 console.log(req.body);
+  
 var stname=req.body.stocker;
   var like=req.body.like;
   var corr=true;
@@ -85,7 +86,14 @@ var price=meta["Time Series (Daily)"][f];
   stocks.find()
 var newStock=new stocks;
   newStock.name=stname;
+  stocks.findOne({name:stname},function(err,docs){
+  if(err){console.log(err)}
+    if(docs!=null){
+    
+    docs.ip.push()
+    }
   
+  })
 })
 })
 // listen for requests :)
