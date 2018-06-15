@@ -105,10 +105,14 @@ var newStock=new stocks;
         
   }
       var obj={
-      
+      "stockdata":{
+      name:stname,
+        likes:docs.like,
+        data:price
+      }
       
       }
-  
+  res.json(obj);
       
   
     }  })
