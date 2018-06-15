@@ -99,7 +99,7 @@ var newStock=new stocks;
         console.log("we here")
   exis=docs.ip.indexOf(add);
         if(exis==-1){console.log("we there")
-        k=Number(docs.like);
+        k=Number(docs.like);console.log(k)
           k++;
           docs.like=k;
           docs.ip.push(add);
