@@ -103,6 +103,12 @@ var newStock=new stocks;
           k++;
           docs.like=k;
           docs.ip.push(add);
+                     docs.save(function(err){
+                     
+                     if(err){console.log(err)}
+                       
+                       
+                     })
         }
         
         
@@ -119,7 +125,7 @@ var newStock=new stocks;
   res.json(obj);
   
     }
-    
+    else{
     var newStock=new stocks;
     newStock.name=stname;
     newStock.ip=[];
@@ -138,15 +144,15 @@ var newStock=new stocks;
       }
       }
     
-     //newStock.save(function(err){
+     newStock.save(function(err){
      
-   //  if(err){console.log(err)}
-      // else{
-//       res.json(obj);
-     //  }
-    // })
+    if(err){console.log(err)}
+      else{
+     res.json(obj);
+      }
+     })
   
-  
+    }
   
   
   
