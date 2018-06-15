@@ -96,7 +96,9 @@ var newStock=new stocks;
       if(like=="1"){
   exis=docs.ip.indexOf(add);
         if(exis==-1){
-        k=Number(docs.);
+        k=Number(docs.like);
+          k++;
+          docs.like=k;
         }
         
         
