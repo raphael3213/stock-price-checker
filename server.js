@@ -170,14 +170,6 @@ var stname1=req.body.stocke1;
 var url1="&apikey=JERJY9GO78VJY24X";
 var urlx1=url+stname1+url1;
   var urlx2=url+stname2+url1;
-request(urlx,function(err,resi,body){
-  
-  var meta=JSON.parse(body);
-  if(meta['Error Message']!=undefined){
-  
-  res.json({Error:"Stock doesnt exist"});
-    
-  }
   var d=new Date();
   
   var date="2018"
@@ -196,13 +188,40 @@ request(urlx,function(err,resi,body){
   }
   var f=date+"-"+month+"-"+days;
   
-var price=meta["Time Series (Daily)"];
+request(urlx1,function(err,resi,body1){
+  
+  var meta=JSON.parse(body1);
+  if(meta['Error Message']!=undefined){
+  
+  res.json({Error:"Stock1 doesnt exist"});
+    
+  }
+  
+var price1=meta["Time Series (Daily)"];
   var exis=0;
 
   
+request(urlx2,function(err,res2,body2){
+ var meta2=JSON.parse(body1);
+  if(meta2['Error Message']!=undefined){
+  
+  res.json({Error:"Stock2 doesnt exist"});
+    
+  }
+  var price2=meta["Time Series (Daily)"];
+  var val1=0,val2=0;
+stocks.findOne({name:stname1},function(err,docs1){
+if(err){console.log(err)}
+  val1=Number(docs1.like);
+  
+  stocks.findOne({name:stname2},function(err,docs2){
+  
+  
+  })
 
-  var k;
-}
+})
+})
+})
         
 })
 // listen for requests :)
