@@ -210,13 +210,21 @@ request(urlx2,function(err,res2,body2){
   }
   var price2=meta["Time Series (Daily)"];
   var val1=0,val2=0;
+  var relval1=0,relval2=0;
 stocks.findOne({name:stname1},function(err,docs1){
 if(err){console.log(err)}
+  if(docs1){
   val1=Number(docs1.like);
-  
+  }
   stocks.findOne({name:stname2},function(err,docs2){
-  
-  
+  if(err){console.log(err)}
+    if(docs2){
+  val2=Number(docs2.like);
+    }relval1=val1-val2;
+    relval2=val2-val1;
+    res.json({stock1:{name:stname1,price:price1[f],relative_likes:relval1},
+             stock2:{name:stname2,price:price2[f],relative_likes:relval2}
+             })
   })
 
 })
