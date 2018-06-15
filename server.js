@@ -87,7 +87,7 @@ var price=meta["Time Series (Daily)"][f];
   stocks.find()
 var newStock=new stocks;
   newStock.name=stname;
-  
+  var k;
   
   stocks.findOne({name:stname},function(err,docs){
   if(err){console.log(err)}
@@ -95,18 +95,16 @@ var newStock=new stocks;
     
       if(like=="1"){
   exis=docs.ip.indexOf(add);
+        if(exis==-1){
+        k=Number(docs.);
+        }
+        
         
   }
   
       
      exis= docs.ip.indexOf(add);
-      if(exis==-1){
-    docs.ip.push(add.toString());
-    }
-      else{
       
-      
-      }
   
     }  })
 })
