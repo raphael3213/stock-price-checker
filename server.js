@@ -85,9 +85,7 @@ var price=meta["Time Series (Daily)"];
   var exis=0;
 
   
-  stocks.find()
-var newStock=new stocks;
-  newStock.name=stname;
+
   var k;
   
   stocks.findOne({name:stname},function(err,docs){
@@ -163,8 +161,49 @@ var newStock=new stocks;
 
 app.get('/comparestock',function(req,res,next){
 
+var stname1=req.body.stocke1;
+  var stname2=req.body.stocke2;
+  
+  var url="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="
 
 
+var url1="&apikey=JERJY9GO78VJY24X";
+var urlx1=url+stname1+url1;
+  var urlx2=url+stname2+url1;
+request(urlx,function(err,resi,body){
+  
+  var meta=JSON.parse(body);
+  if(meta['Error Message']!=undefined){
+  
+  res.json({Error:"Stock doesnt exist"});
+    
+  }
+  var d=new Date();
+  
+  var date="2018"
+  console.log("year is "+date)
+  var month=d.getMonth()+1;
+  month=month.toString();
+  if(month.length==1){
+  
+  month="0"+month;
+  }
+  var days=d.getDate()-2;
+  days=days.toString();
+  if(days.length==1)
+  {
+  days="0"+days;
+  }
+  var f=date+"-"+month+"-"+days;
+  
+var price=meta["Time Series (Daily)"];
+  var exis=0;
+
+  
+
+  var k;
+}
+        
 })
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
