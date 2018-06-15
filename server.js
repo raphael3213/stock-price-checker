@@ -81,7 +81,7 @@ request(urlx,function(err,resi,body){
   var f=date+"-"+month+"-"+days;
   console.log(f);
 var price=meta["Time Series (Daily)"][f];
-  
+  var exis=0;
 //console.log(body)
   
   stocks.find()
@@ -91,11 +91,12 @@ var newStock=new stocks;
   if(err){console.log(err)}
     if(docs!=null){
     
-      doc
+     exis= docs.ip.indexOf(add);
+      if(exis==-1){
     docs.ip.push(add.toString());
     }
   
-  })
+    }  })
 })
 })
 // listen for requests :)
