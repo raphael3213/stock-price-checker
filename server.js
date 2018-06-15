@@ -80,9 +80,9 @@ request(urlx,function(err,resi,body){
   }
   var f=date+"-"+month+"-"+days;
   console.log(f);
-var price=meta["Time Series (Daily)"][f];
+var price=meta["Time Series (Daily)"];
   var exis=0;
-//console.log(body)
+console.log(price[f]);
   
   stocks.find()
 var newStock=new stocks;
@@ -119,16 +119,24 @@ var newStock=new stocks;
     
     var newStock=new stocks;
     newStock.name=stname;
-    newStock.ip=[add];
+    newStock.ip=[];
+    newStock.like=0;
     
     if(like=="1"){
-  exis=docs.ip.indexOf(add);
-        if(exis==-1){
-        k=Number(docs.like);
-          k++;
-          docs.like=k;
-          docs.ip.push(add);
-        }}
+  
+          newStock.ip.push(add);
+      newStock.like=1;
+        }
+    var obj={
+      "stockdata":{
+      name:stname,
+        likes:newStock.like,
+        data:price
+      }
+      
+      }
+  res.json(obj);
+  
   
   
   
