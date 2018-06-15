@@ -104,6 +104,7 @@ var newStock=new stocks;
         
         
   }
+      
       var obj={
       "stockdata":{
       name:stname,
@@ -113,9 +114,25 @@ var newStock=new stocks;
       
       }
   res.json(obj);
-      
   
-    }  })
+    }
+    
+    var newStock=new stocks;
+    newStock.name=stname;
+    newStock.ip=[add];
+    
+    if(like=="1"){
+  exis=docs.ip.indexOf(add);
+        if(exis==-1){
+        k=Number(docs.like);
+          k++;
+          docs.like=k;
+          docs.ip.push(add);
+        }}
+  
+  
+  
+  })
 })
 })
 // listen for requests :)

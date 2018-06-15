@@ -4,7 +4,10 @@ var stockSchema=mongoose.Schema({
 
 ip:Array,
   name:String,
-  like:Number
+  like:{
+  type:Number,
+    default:0
+  }
 
 })
 
