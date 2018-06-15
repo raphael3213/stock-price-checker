@@ -73,7 +73,8 @@ request(urlx,function(err,resi,body){
   
   month="0"+month;
   }
-  var days=d.getDate().toString();
+  var days=d.getDate()-2;
+  days=days.toString();
   if(days.length==1)
   {
   days="0"+days;
@@ -109,7 +110,7 @@ var newStock=new stocks;
       "stockdata":{
       name:stname,
         likes:docs.like,
-        data:price
+        data:price[f]
       }
       
       }
@@ -131,10 +132,17 @@ var newStock=new stocks;
       "stockdata":{
       name:stname,
         likes:newStock.like,
-        data:price
+        data:price[f]
       }
-      
       }
+    
+     newStock.save(function(err){
+     
+     if(err){console.log(err)}
+       
+       
+       
+     })
   res.json(obj);
   
   
