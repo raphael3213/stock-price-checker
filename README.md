@@ -1,27 +1,5 @@
-Welcome to Glitch
-=================
-
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-
-Your Project
-------------
-
-On the front-end,
-- edit `public/client.js`, `public/style.css` and `views/index.html`
-- drag in `assets`, like images or music, to add them to your project
-
-On the back-end,
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
-
-
-Made by [Fog Creek](https://fogcreek.com/)
--------------------
-
-\ ゜o゜)ノ
+I can GET /api/stock-prices with form data containing a Nasdaq stock ticker and recieve back an object stockData.
+In stockData, I can see the stock(string, the ticker), price(decimal in string format), and likes(int).
+I can also pass along field like as true(boolean) to have my like added to the stock(s). Only 1 like per ip should be accepted.
+If I pass along 2 stocks, the return object will be an array with both stock's info but instead of likes, it will display rel_likes(the difference betwwen the likes) on both.
+Vantage Alpha Stock API was used to obtain api information.
