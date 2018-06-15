@@ -95,6 +95,10 @@ var newStock=new stocks;
       if(exis==-1){
     docs.ip.push(add.toString());
     }
+      else{
+      
+      
+      }
   
     }  })
 })
