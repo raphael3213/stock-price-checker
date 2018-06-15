@@ -99,13 +99,16 @@ var newStock=new stocks;
         k=Number(docs.like);
           k++;
           docs.like=k;
+          docs.ip.push(add);
         }
         
         
   }
-  
+      var obj={
       
-     exis= docs.ip.indexOf(add);
+      
+      }
+  
       
   
     }  })
