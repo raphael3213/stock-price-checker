@@ -45,7 +45,8 @@ request(url,function(err,res,body){
 app.post('/stock',function(req,res,next){
 console.log("hello")
 console.log(req.body);
-  
+  var add=req.header('x-forwarded-for').split(',')[0];
+  console.log(add)
 var stname=req.body.stocker;
   var like=req.body.like;
   var corr=true;
@@ -90,7 +91,8 @@ var newStock=new stocks;
   if(err){console.log(err)}
     if(docs!=null){
     
-    docs.ip.push()
+      doc
+    docs.ip.push(add.toString());
     }
   
   })
