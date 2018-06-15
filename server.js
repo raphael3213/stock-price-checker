@@ -47,7 +47,7 @@ app.post('/stock',function(req,res,next){
 console.log(req.body);
   var add=req.header('x-forwarded-for').split(',')[0];
   console.log(add)
-var stname=req.body.stocker;
+var stname=req.body.stocker.toLowerCase();
   var like=req.body.like;
   var corr=true;
   var url="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="
@@ -160,9 +160,9 @@ var price=meta["Time Series (Daily)"];
 
 
 app.get('/comparestock',function(req,res,next){
-
-var stname1=req.body.stocke1;
-  var stname2=req.body.stocke2;
+console.log(req.query);
+var stname1=req.query.stocke1.toLowerCase();
+  var stname2=req.query.stocke2.toLowerCase();
   
   var url="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="
 
